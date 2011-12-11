@@ -1,0 +1,5 @@
+Simple contact form to send email from web pages
+
+pip install bottle
+
+by trentas
