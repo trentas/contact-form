@@ -7,10 +7,12 @@ static_document_root = static/
 gmail_login = my_gmail_login@gmail.com
 gmail_password = my_gmail_password
 gmail_rcpt_to = my_dest_email@gmail.com
+custom_subject_header = [Contact-Form Message]
 redirect_after_sucess = http://www.google.com/
 
 [example2]
 gmail_login = my_gmail_login2@gmail.com
 gmail_password = my_gmail_password2
 gmail_rcpt_to = my_dest_email2@gmail.com
+custom_subject_header = [A New Contact From The Website]
 redirect_after_sucess = http://www.disney.com/
