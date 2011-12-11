@@ -1,5 +1,5 @@
 [program:contact-form]
 command=/usr/bin/python /opt/contact-form/contact-form.py
 redirect_stderr=true
-stdout_logfile=/var/log/contact-form.log
+stdout_logfile=/var/log/contact-form/contact-form.log
 stdout_logfile_maxbytes=10MB
