@@ -8,3 +8,4 @@ redirect_after_sucess = http://www.google.com/
 gmail_login = my_gmail_login2@gmail.com
 gmail_password = my_gmail_password2
 gmail_rcpt_to = my_dest_email2@gmail.com
+redirect_after_sucess = http://www.disney.com/
