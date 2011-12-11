@@ -1,3 +1,8 @@
+[main]
+bind_address = localhost
+bind_port = 8080
+static_document_root = static/
+
 [example]
 gmail_login = my_gmail_login@gmail.com
 gmail_password = my_gmail_password
