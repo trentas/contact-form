@@ -1,5 +1,6 @@
-Simple contact form to send email from web pages
+Simple contact form application to send email from web pages
 
+Requires:
 pip install bottle
 
-by trentas
+by @trentas
