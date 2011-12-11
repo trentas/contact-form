@@ -21,17 +21,19 @@ def send_form(destination):
 	gmail_login = config.get(destination, 'gmail_login')
 	gmail_password = config.get(destination, 'gmail_password')
 	gmail_rcpt_to = config.get(destination, 'gmail_rcpt_to')
+	custom_subject_header = config.get(destination, 'custom_subject_header')
 	redirect_after_sucess = config.get(destination, 'redirect_after_sucess')
 	form_name = request.forms.get('name')
 	form_email = request.forms.get('email')
 	form_subject = request.forms.get('subject')
 	form_body = request.forms.get('comments')
 	mail_from = '%s <%s>' % (form_name, form_email)
+	subject = '%s %s' % (custom_subject_header, form_subject)
 	msg = MIMEText(form_body)
 	msg['From'] = mail_from
 	msg['Reply-To'] = mail_from
 	msg['To'] = gmail_rcpt_to
-	msg['Subject'] = form_subject
+	msg['Subject'] = subject
 	try:
 		smtp_server = smtplib.SMTP('smtp.gmail.com', 587)
 		smtp_server.starttls()
@@ -40,8 +42,8 @@ def send_form(destination):
 		smtp_server.close()
 		redirect(redirect_after_sucess)
 	except:
-		#raise
-		abort(500, "Error connecting to smtp server.")
+		raise
+		#abort(500, "Error connecting to smtp server.")
 
 
 run(host=bind_address, port=bind_port)
