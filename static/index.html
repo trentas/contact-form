@@ -3,12 +3,55 @@
 	<title>Example</title>
  </head>
  <body>
-	<form method="POST">
-		<p>Name:<input name="name" type="text" /></p>
-		<p>Email:<input name="email" type="email" /></p>
-		<p>Subject:<input name="subject" type="subject" /></p>
-		<p>Comments<input name="comments" type="comments" /></p>
+	<form method="POST" action="index.html" id="formContact">
+		<p>Name:<input name="name" id="name" type="text" /></p>
+		<p>Email:<input name="email" id="email" type="text" /></p>
+		<p>Subject:<input name="subject" id="subject" type="text" /></p>
+		<p>Comments<input name="comments" id="comments" type="text" /></p>
 		<input type="submit" value="submit" method="post" />
 	</form>
+	
+	
+	<script>
+		function $id(id)
+		{
+			return document.getElementById(id);
+		}
+		
+		function checkForm()
+		{
+			var errors = [];
+			if($id('name').value.length == "0")
+			{
+				errors.push('Empty username');
+			}
+			
+			var email = /^[A-Za-z]{1}([\w\.]{1}[\w]{1}|[\w]{1}[\w\.]{1})([\w]|\.{1}[\w]){0,29}@(([\w]{2,63}\.)+[A-Za-z]{2,6}|[\d{1,3}(\.\d{1,3}){3}])$/;
+			if(!email.test($id('email').value))
+			{
+			   errors.push('Invalid email address');
+			}
+			
+			if($id('subject').value.length == "0")
+			{
+				errors.push('Empty subject');
+			}
+			
+			if($id('comments').value.length == "0")
+			{
+				errors.push('Empty comment');
+			}
+			
+			if(errors.length > 0)
+			{
+				alert(errors.join(' -- '));
+				return false;
+			}
+
+	
+	
+		$id('formContact').onsubmit = checkForm;
+	</script>
+	
  </body>
 </html>
