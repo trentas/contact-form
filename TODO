@@ -1,0 +1,9 @@
+- add some security measures
+- a fancy html example
+- add a referer whitelabel for each configuration
+- create an administration to include new configurations
+- multithreading (?)
+- syslog support
+- a redirect on error configuration
+- support for non-gmail smtp servers
+- fix the Reply-To: issue
