@@ -5,5 +5,4 @@
 - multithreading (?)
 - syslog support
 - a redirect on error configuration
-- support for non-gmail smtp servers
 - fix the Reply-To: issue
