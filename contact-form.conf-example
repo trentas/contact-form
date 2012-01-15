@@ -15,6 +15,7 @@ custom_subject_header = [Contact-Form Message]
 redirect_after_success = http://www.google.com/
 confirmation_email_template = confirmation_email.html
 custom_confirmation_subject = Thank you for your interest!
+custom_file_request_notice = The user asked for the file
 file_to_send = portfolio.pdf
 
 [example2]

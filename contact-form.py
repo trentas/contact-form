@@ -52,6 +52,7 @@ def send_form(destination):
 	redirect_after_success = config.get(destination, 'redirect_after_success')
 	confirmation_email_template = config.get(destination, 'confirmation_email_template')
 	custom_confirmation_subject = config.get(destination, 'custom_confirmation_subject')
+	custom_file_request_notice = config.get(destination, 'custom_file_request_notice')
 	file_to_send = config.get(destination, 'file_to_send')
 	
 	form_name = request.forms.get('name')
@@ -61,6 +62,8 @@ def send_form(destination):
 	form_sendfile = request.forms.get('sendfile')
 	mail_from = '%s <%s>' % (form_name, form_email)
 	subject = '%s %s' % (custom_subject_header, form_subject)
+	if form_sendfile and file_to_send:
+		form_body += '\n%s\n' % (custom_file_request_notice)
 	
 	msg = MIMEText(form_body)
 	msg['From'] = mail_from
