@@ -27,3 +27,7 @@ smtp_password = mypassword2
 receipt_to = dest_email2@gmail.com
 custom_subject_header = [A New Contact From The Website]
 redirect_after_success = http://www.disney.com/
+confirmation_email_template = false
+custom_confirmation_subject = false
+custom_file_request_notice = false
+file_to_send = false
