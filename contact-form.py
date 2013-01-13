@@ -14,7 +14,7 @@ from email.header import Header
 import mimetypes
 import codecs
 
-CONFIG_FILE = 'contact-form.conf'
+CONFIG_FILE = '/etc/contact-form/contact-form.conf'
 
 config = ConfigParser.ConfigParser()
 config.read(CONFIG_FILE)
